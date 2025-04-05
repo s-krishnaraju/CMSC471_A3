@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CMSC471 A3: White Hat vs Black Hat</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <h1>CMSC471 A3: White Hat vs Black Hat</h1>
+    <section>
+        <h2>White Hat Visualization</h2>
+        <div id="white-hat"></div>
+        <div style="padding: 1rem;">
+            <h3><i>Write Up</i></h3>
+            <p style="font-size:larger;">The data for this visualization comes from the OECD Greenhouse Gas Emissions
+                dataset, which covers emissions across many countries and sectors. Initially, I thought about comparing
+                GHG emissions across multiple countries, but I realized that would make the visualization too complex.
+                To keep it clear and focused, I decided to narrow the scope to just the United States, which also made
+                it easier to set up the contrasting black hat visualization later.
+
+                For the white hat visualization, I chose to display the total greenhouse gas (GHG) emissions in the U.S.
+                from 2001 to 2022, measured in thousands of tonnes of CO2-equivalent. I used a simple time series line
+                plot to show how emissions changed over time. This design allows for an easy-to-understand view of the
+                data, highlighting the steady but gradual decline in emissions without any major spikes or fluctuations.
+                The visualization is clear and straightforward, with labeled axes and a simple title, ensuring that the
+                data is easy to interpret. The trend shown—emissions slowly decreasing over time—accurately reflects the
+                real-world data, which has seen a consistent reduction in GHGs in the U.S. in recent years. By focusing
+                on transparency and simplicity in the visualization, I'm able to present the data in an honest and
+                accessible way, with no distractions or misleading elements, which aligns with the purpose of a good
+                white hat visualization.
+            </p>
+        </div>
+    </section>
+
+    <section>
+        <h2>Black Hat Visualization</h2>
+        <div id="black-hat"></div>
+        <div style="padding: 1rem; ">
+            <h3><i>Write Up</i></h3>
+            <p style="font-size:larger;">
+                For the black hat visualization, I wanted to create a narrative that leads the viewer to a completely
+                different—and misleading—conclusion than the white hat version. Since my white hat visualization showed
+                a slight, steady decrease in total U.S. greenhouse gas (GHG) emissions over time, I set out to design a
+                chart that instead suggested a significant increase in GHG emissions, even though that’s not what the
+                full data shows. To do this, I explored the OECD dataset more closely and noticed that it allows you to
+                break down emissions by individual pollutants. That’s when I found my angle: Hydrofluorocarbons (HFCs),
+                a small subset of overall GHGs, have actually increased over time—by nearly 80% from their 2001 levels.
+                This gave me just the misleading trend I needed. There are a few key ways I intentionally skewed the
+                visualization. First, the dataset: instead of showing total emissions like I did in the white hat, I
+                focused only on HFCs, which paints a very different picture. Second, the title: I deliberately left out
+                any mention of HFCs and just called the chart “Change in U.S. Greenhouse Gas Pollution”. While
+                technically not false—HFCs are greenhouse gases—it gives the impression that the chart is referring to
+                total GHG emissions, which it isn’t. Lastly, I changed the measurement. In the white hat, I used
+                thousands of tonnes of CO₂-equivalent, which gives you a sense of scale. But because HFCs make up such a
+                small portion of total emissions, that would’ve made the increase look almost insignificant. So instead,
+                I plotted percent change from the base year (2001) and removed any mention of actual units, making the
+                increase look dramatic and harder to question at first glance. In the end, this black hat visualization
+                is deceptive in three ways: 1) it uses a misleading subset of the data (HFCs instead of total GHGs), 2)
+                the title omits important context, and 3) the data is transformed into percent change to exaggerate the
+                trend. These subtle changes work together to completely flip the narrative—presenting a world where
+                emissions seem to be rising sharply, when the broader data tells the opposite story.
+            </p>
+        </div>
+    </section>
+
+    <script src='https://cdn.plot.ly/plotly-3.0.0.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.17/d3.min.js'></script>
+    <script src="script.js"></script>
+
+</body>
+
+</html>
